@@ -1,0 +1,15 @@
+cmake_minimum_required(VERSION 3.15)
+project(testFramework)
+
+set(CMAKE_CXX_STANDARD 14)
+
+set(CMAKE_CXX_FLAGS "-Wno-deprecated-declarations")
+find_package(OpenGL REQUIRED)
+find_package(GLEW REQUIRED)
+find_package(glfw3 3.3 REQUIRED)
+include_directories( ${OPENGL_INCLUDE_DIRS}  ${GLEW_INCLUDE_DIRS})
+include_directories( "/usr/local/include" "/usr/local/Cellar/glfw/3.3/include")
+set(CMAKE_INCLUDE_PATH "/usr/local/lib")
+link_directories("/usr/local/lib")
+add_executable(testFramework main.cpp glad.c glad.h khrplatform.h Shader.h)
+target_link_libraries(testFramework ${OPENGL_LIBRARIES} ${GLUT_LIBRARY} GLEW::GLEW glfw)
