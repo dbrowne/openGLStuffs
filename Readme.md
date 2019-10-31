@@ -7,6 +7,7 @@ Based on the code in [Learn OpenGL]
 
 Some references:   
 - [Common Mistakes]
+- [GLSL Common Mistakes]
 - [opengl.org]
 - [songho]
 - [Fast Rendering of Geometric Primitives]
@@ -25,3 +26,4 @@ Some references:
 [GPU Shading]:https://www.inf.tu-dresden.de/content/institutes/smt/cg/results/minorthesis/pbrausewetter/files/Beleg.pdf
 [opengl.org]:https://www.opengl.org
 [another opengl site]:https://open.gl/introduction
+[GLSL Common Mistakes]:https://www.khronos.org/opengl/wiki/GLSL_:_common_mistakes
