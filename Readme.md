@@ -12,6 +12,7 @@ Some references:
 - [Fast Rendering of Geometric Primitives]
 - [opengl wikibook]
 - [GPU Shading]
+- [another opengl site]
 
 
 
@@ -23,3 +24,4 @@ Some references:
 [opengl wikibook]:https://en.wikibooks.org/wiki/OpenGL_Programming
 [GPU Shading]:https://www.inf.tu-dresden.de/content/institutes/smt/cg/results/minorthesis/pbrausewetter/files/Beleg.pdf
 [opengl.org]:https://www.opengl.org
+[another opengl site]:https://open.gl/introduction
