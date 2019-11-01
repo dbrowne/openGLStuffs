@@ -16,6 +16,7 @@ Some references:
 - [GPU Shading]
 - [another opengl site]
 - [WebGL Shader tester]
+- [Math Cheat sheet]
 
 
 
@@ -31,3 +32,4 @@ Some references:
 [GLSL Common Mistakes]:https://www.khronos.org/opengl/wiki/GLSL_:_common_mistakes
 [The Book of Shaders]:https://thebookofshaders.com
 [WebGL Shader tester]:https://github.com/patriciogonzalezvivo/glslCanvas
+[Math Cheat sheet]:http://antongerdelan.net/teaching/3dprog1/maths_cheat_sheet.pdf
