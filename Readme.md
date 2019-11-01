@@ -17,6 +17,7 @@ Some references:
 - [another opengl site]
 - [WebGL Shader tester]
 - [Math Cheat sheet]
+- [Real Time Rendering Resources]
 
 
 
@@ -33,3 +34,4 @@ Some references:
 [The Book of Shaders]:https://thebookofshaders.com
 [WebGL Shader tester]:https://github.com/patriciogonzalezvivo/glslCanvas
 [Math Cheat sheet]:http://antongerdelan.net/teaching/3dprog1/maths_cheat_sheet.pdf
+[Real Time Rendering Resources]:http://www.realtimerendering.com/index.html
