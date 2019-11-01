@@ -8,12 +8,14 @@ Based on the code in [Learn OpenGL]
 Some references:   
 - [Common Mistakes]
 - [GLSL Common Mistakes]
+- [The Book of Shaders]
 - [opengl.org]
 - [songho]
 - [Fast Rendering of Geometric Primitives]
 - [opengl wikibook]
 - [GPU Shading]
 - [another opengl site]
+- [WebGL Shader tester]
 
 
 
@@ -27,3 +29,5 @@ Some references:
 [opengl.org]:https://www.opengl.org
 [another opengl site]:https://open.gl/introduction
 [GLSL Common Mistakes]:https://www.khronos.org/opengl/wiki/GLSL_:_common_mistakes
+[The Book of Shaders]:https://thebookofshaders.com
+[WebGL Shader tester]:https://github.com/patriciogonzalezvivo/glslCanvas
