@@ -12,12 +12,16 @@
 void framebuffer_size_callback(GLFWwindow* window, int width, int height);
 void processInput(GLFWwindow *window);
 
+void changeMix(void);
+
 // settings
 const unsigned int SCR_WIDTH = 800;
 const unsigned int SCR_HEIGHT = 600;
 
 // stores how much we're seeing of either texture
 float mixValue = 0.0f;
+#define MIXCONST  0.00001f
+float mixMult = 1.0f;
 
 int main()
 {
@@ -34,8 +38,8 @@ int main()
 
     // glfw window creation
     // --------------------
-    GLFWwindow *window = glfwCreateWindow(SCR_WIDTH, SCR_HEIGHT, "LearnOpenGL", NULL, NULL);
-    if (window == NULL)
+    GLFWwindow *window = glfwCreateWindow(SCR_WIDTH, SCR_HEIGHT, "Testing", NULL, NULL);
+    if (window == nullptr)
     {
         std::cout << "Failed to create GLFW window" << std::endl;
         glfwTerminate();
@@ -164,7 +168,7 @@ int main()
     if (data)
     {
         // note that the awesomeface.png has transparency and thus an alpha channel, so make sure to tell OpenGL the data type is of GL_RGBA
-        glTexImage2D(GL_TEXTURE_2D, 0, GL_RGB, width, height, 0, GL_RGBA, GL_UNSIGNED_BYTE, data);
+        glTexImage2D(GL_TEXTURE_2D, 0, GL_RGBA, width, height, 0, GL_RGBA, GL_UNSIGNED_BYTE, data);
         glGenerateMipmap(GL_TEXTURE_2D);
     }
     else
@@ -176,7 +180,7 @@ int main()
     // tell opengl for each sampler to which texture unit it belongs to (only has to be done once)
     // -------------------------------------------------------------------------------------------
     ourShader.use();
-    ourShader.setInt("texture1", 0);
+    glUniform1i(glGetUniformLocation(ourShader.ID, "texture1"), 0); // set it manually
     ourShader.setInt("texture2", 1);
 
 
@@ -192,13 +196,13 @@ int main()
         // ------
         glClearColor(0.2f, 0.3f, 0.3f, 1.0f);
         glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT); // also clear the depth buffer now!
-
+        // set the texture mix value in the shader
+        ourShader.setFloat("mixValue", mixValue);
         // bind textures on corresponding texture units
         glActiveTexture(GL_TEXTURE0);
         glBindTexture(GL_TEXTURE_2D, texture1);
         glActiveTexture(GL_TEXTURE1);
         glBindTexture(GL_TEXTURE_2D, texture2);
-
         // activate shader
         ourShader.use();
 
@@ -217,7 +221,7 @@ int main()
         glUniformMatrix4fv(viewLoc, 1, GL_FALSE, &view[0][0]);
         // note: currently we set the projection matrix each frame, but since the projection matrix rarely changes it's often best practice to set it outside the main loop only once.
         ourShader.setMat4("projection", projection);
-
+        changeMix();
         // render box
         glBindVertexArray(VAO);
         glDrawArrays(GL_TRIANGLES, 0, 36);
@@ -240,6 +244,17 @@ int main()
     return 0;
 }
 
+void changeMix(void) {
+    mixValue += mixMult * MIXCONST;
+    if (mixValue >= 1.0f) {
+        mixMult *= -1;
+        mixValue = 1;
+    }
+    if (mixValue <= 0) {
+        mixValue = 0;
+        mixMult = 1;
+    }
+}
 
 // process all input: query GLFW whether relevant keys are pressed/released this frame and react accordingly
 // ---------------------------------------------------------------------------------------------------------
