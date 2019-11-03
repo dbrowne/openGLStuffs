@@ -19,6 +19,7 @@ Some references:
 - [Math Cheat sheet]
 - [Real Time Rendering Resources]
 - [OpenGL Projection Matrix]
+- [Tiling Textures on the Plane]
 
 
 
@@ -37,3 +38,4 @@ Some references:
 [Math Cheat sheet]:http://antongerdelan.net/teaching/3dprog1/maths_cheat_sheet.pdf
 [Real Time Rendering Resources]:http://www.realtimerendering.com/index.html
 [OpenGL Projection Matrix]:http://www.songho.ca/opengl/gl_projectionmatrix.html
+[Tiling Textures on the Plane]:http://paulbourke.net/geometry/tiling/
