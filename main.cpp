@@ -1,5 +1,5 @@
 #include <iostream>
-#include "glad.h"
+#include "glad.h"   //glad comes from https://glad.dav1d.de/
 #include <GLFW/glfw3.h>
 #include "Shader.h"
 #include <cmath>
@@ -226,8 +226,8 @@ int main()
         glm::mat4 model = glm::mat4(1.0f); // make sure to initialize matrix to identity matrix first
         glm::mat4 view = glm::mat4(1.0f);
         glm::mat4 projection = glm::mat4(1.0f);
-        model = glm::rotate(model, (float) glfwGetTime(), glm::vec3(-0.5f, -1.0f, 0.5f));
-        view = glm::translate(view, glm::vec3(0.0f, 0.0f, -6.0f));
+        model = glm::rotate(model, (float) glfwGetTime(), glm::vec3(-0.5f, -1.0f, 1.0f));
+        view = glm::translate(view, glm::vec3(0.0f, 0.0f, -9.5f));
         projection = glm::perspective(glm::radians(45.0f), (float) SCR_WIDTH / (float) SCR_HEIGHT, 0.1f, 100.0f);
         // retrieve the matrix uniform locations
         unsigned int modelLoc = glGetUniformLocation(ourShader.ID, "model");
@@ -238,6 +238,12 @@ int main()
         // note: currently we set the projection matrix each frame, but since the projection matrix rarely changes it's often best practice to set it outside the main loop only once.
         ourShader.setMat4("projection", projection);
         changeMix();
+
+        float radius = 10.0f;
+        float camX = sin(glfwGetTime()) * radius;
+        float camZ = cos(glfwGetTime()) * radius;
+        view = glm::lookAt(glm::vec3(camX, 0.0f, camZ), glm::vec3(0.0f, 0.0f, 0.0f), glm::vec3(0.0f, 1.0f, 0.0f));
+        ourShader.setMat4("view", view);
         // render box
         glBindVertexArray(VAO);
         for (unsigned int i = 0; i < 10; i++) {

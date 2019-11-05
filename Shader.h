@@ -1,5 +1,6 @@
 //
 // Created by Dwight J. Browne on 10/30/19.
+// from code examples in the learnoepgl book by Joey de Vries   www.learopengl.com
 //
 
 #ifndef TESTFRAMEWORK_SHADER_H

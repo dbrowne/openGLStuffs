@@ -20,7 +20,9 @@ Some references:
 - [Real Time Rendering Resources]
 - [OpenGL Projection Matrix]
 - [Tiling Textures on the Plane]
-
+- [Interactive shader format]
+- [Introducing Shaders]
+- [OpenGl Tutorial]
 
 
 
@@ -39,3 +41,6 @@ Some references:
 [Real Time Rendering Resources]:http://www.realtimerendering.com/index.html
 [OpenGL Projection Matrix]:http://www.songho.ca/opengl/gl_projectionmatrix.html
 [Tiling Textures on the Plane]:http://paulbourke.net/geometry/tiling/
+[Interactive shader format]:https://www.interactiveshaderformat.com/
+[Introducing Shaders]:https://openframeworks.cc/ofBook/chapters/shaders.html
+[OpenGl Tutorial]:http://www.opengl-tutorial.org/
